@@ -34,7 +34,13 @@ function App() {
 
   const sendMessage = async(message:string) => {
     try{
-      await conn?.invoke("SendMessage",message);
+      /* El primer parametro es el nombre del metodo en el backend
+      el segundo parametro es el mensaje que se va a enviar
+      el tercer parametro es el usuario que envia el mensaje (colocar nombre del paciente o del agente)
+      el cuarto parametro es el tipo de mensaje (ya sea mensaje de texto, imagen, video, etc), IMPORTANTE VERIFICAR CON LUIS CÓMO MANEJA ESTO
+      el quinto parametro es el attachment (si es que se envia un archivo)
+      */
+      await conn?.invoke("SendMessage",message,"Enviado por paciente", "Tipo mensaje", null);
     }catch(e){
       console.log(e);
     }
