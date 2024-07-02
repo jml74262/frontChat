@@ -14,7 +14,7 @@ function App() {
 
   const JoinChatRoom = async (username:any,chatroom:any) => {
     try{
-      const conn = new HubConnectionBuilder().withUrl("https://contactcenter.dkt.com.mx:88/api/chatHub").configureLogging(LogLevel.Information).build();
+      const conn = new HubConnectionBuilder().withUrl("https://med.telefem.org:83/chatHub").configureLogging(LogLevel.Information).build();
       conn.on("JoinSpecificChatRoom",(username,msg) => {console.log("Mensajeeeeee: ",msg);
       // setmessages(messages => [...messages, {username,msg}]);
       setmessages(msg);

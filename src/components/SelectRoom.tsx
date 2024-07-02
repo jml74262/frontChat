@@ -20,8 +20,8 @@ const WaitingRoom = ({ joinChatRoom }: { joinChatRoom: any }) => {
         myHeaders.append("accept", "text/plain");
 
         const url = user.toLowerCase() === "admin" 
-            ? "https://contactcenter.dkt.com.mx:88/api/api/Mongo/Conversaciones"
-            : `https://contactcenter.dkt.com.mx:88/api/api/Mongo/ConversacionesUsuario?usuario=${user}`;
+            ? "https://med.telefem.org:83/api/Mongo/Conversaciones"
+            : `https://med.telefem.org:83/api/ConversacionesUsuario?usuario=${user}`;
 
         fetch(url, {
             method: "GET",
@@ -71,7 +71,7 @@ const WaitingRoom = ({ joinChatRoom }: { joinChatRoom: any }) => {
             created_at: "2024-05-21T06:22:12.968Z"
         });
 
-        fetch("https://contactcenter.dkt.com.mx:88/api/api/Mongo/Conversacion", {
+        fetch("https://med.telefem.org:83/api/Mongo/Conversacion", {
             method: "POST",
             headers: myHeaders,
             body: raw,
